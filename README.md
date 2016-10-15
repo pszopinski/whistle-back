@@ -31,9 +31,18 @@ Urządzenie pracuje według następującego schematu.
 5. Odtworzenie sygnału wyjściowego.
 6. Powrót do punktu 1.
 
-## Plan działania
+## Lista zadań
 Aby ułatwić sobie pracę, przygotowałem listę czynności, które należy wykonać.
 - [x] Zakup potrzebnych elementów.
+- [ ] Test współpracy klonu Arduino z Arduino IDE.
+- [ ] Przylutowanie pinów modułu mikrofonu.
+- [ ] Złożenie układu na płytce stykowej.
+- [ ] Podstawowa obsługa przycisku.
+- [ ] Podstawowa obsługa brzęczyka.
+- [ ] Podstawowa obsługa mikrofonu.
+- [ ] Obsługa rozpoczęcia i zakończenia nagrywania.
+- [ ] Wykonywanie transformat Fouriera.
+- [ ] Generowanie adekwatnego sygnału wyjściowego.
 
 ***
 
