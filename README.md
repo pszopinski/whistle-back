@@ -23,8 +23,8 @@ Urządzenie pracuje według następującego schematu.
 1. Oczekiwanie na naciśnięcie przycisku.
 2. Nagrywanie melodii z otoczenia.
 3. Zakończenie nagrywania
-  -. po dwóch sekundach ciszy, lub
-  -. po 10 sekundach nagrywania.
+  - po dwóch sekundach ciszy, lub
+  - po 10 sekundach nagrywania.
 4. Dla każdej z próbek czasowych:
   1. Przeprowadzenie transformaty Fouriera.
   2. Zapisanie odpowiedniego sygnału wyjściowego.
