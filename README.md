@@ -46,7 +46,8 @@ Aby ułatwić sobie pracę, przygotowałem listę czynności, które należy wyk
 
 ## Bibliografia
 * [Fast Fourier Transforms](http://www.katjaas.nl/FFT/FFT.html) [dostęp: 2016-11-8]
-* [Cooley–Tukey FFT algorithm](https://en.wikipedia.org/wiki/Cooley–Tukey_FFT_algorithm) [dostęp: 2016-11-8]
+* [Cooley&ndash;Tukey FFT algorithm](https://en.wikipedia.org/wiki/Cooley–Tukey_FFT_algorithm) [dostęp: 2016-11-8]
+* R. Burden, J. Faires. Numerical Analysis. Edycja 9. Strony 547&ndash;557.
 
 ***
 
