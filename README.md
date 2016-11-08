@@ -12,7 +12,7 @@ W projekcie wykorzystuję:
 * przycisk monostabilny,
 * przewody połączeniowe.
 
-![obrazek klonu Arduino Micro][arduino-img] ![obrazek mikrofonu][mic-img] ![obrazek brzęczyka][buzzer-img] ![obrazek płytki stykowej][breadboard-img] ![obrazek przycisku][button-img] ![obrazek przewodów][wires-img]
+<a href="https://www.aliexpress.com/item/Micro-ATmega32U4-5V-16MHz-Pins-soldered-Compatible-with-Arduino-Micro-and-Leonardo/32676998690.html">![obrazek klonu Arduino Micro][arduino-img]</a><a href="https://www.aliexpress.com/item/New-Electret-Microphone-Amplifier-MAX4466-With-Adjustable-Gain-For-Arduino/32717091448.html">![obrazek mikrofonu][mic-img]</a><a href="http://www.robitshop.com/passive-buzzer-module">![obrazek brzęczyka][buzzer-img]</a><a href="https://www.aliexpress.com/item/V1NF-Hot-Sale-400-Points-Solderless-Bread-Board-Breadboard-PCB-Test-Board-Free-Shipping/32633859572.html">![obrazek płytki stykowej][breadboard-img]</a><a href="http://minielektro.dk/dip-tryk-knap.html">![obrazek przycisku][button-img]</a><a href="https://kamami.pl/13022-przewody-i-zlacza-do-arduino">![obrazek przewodów][wires-img]</a>
 
 Zdecydowałem się wykorzystać platformę Arduino Micro między innymi dlatego, że pozwala na zasilanie urządzeń peryferyjnych napięciem 3,3&nbsp;V. Mikrofon zasilany takim napięciem charakteryzuje się większą czułością, niż w przypadku zastosowania napięcia 5&nbsp;V.
 
@@ -43,6 +43,9 @@ Aby ułatwić sobie pracę, przygotowałem listę czynności, które należy wyk
 - [ ] Obsługa rozpoczęcia i zakończenia nagrywania.
 - [ ] Wykonywanie transformat Fouriera.
 - [ ] Generowanie adekwatnego sygnału wyjściowego.
+
+## Źródła
+Odnośniki na obrazkach prowadzą do ich źródła.
 
 ## Bibliografia
 * [Fast Fourier Transforms](http://www.katjaas.nl/FFT/FFT.html) [dostęp: 2016-11-8]
