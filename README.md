@@ -34,6 +34,8 @@ Urządzenie pracuje według następującego schematu.
 ## Lista zadań
 Aby ułatwić sobie pracę, przygotowałem listę czynności, które należy wykonać.
 - [x] Zakup potrzebnych elementów.
+- [x] Implementacja rekurencyjnego algorytmu FFT w języku Python
+- [x] Implementacja algorytmu Cooleya-Tukeya w języku C
 - [ ] Test współpracy klonu Arduino z Arduino IDE.
 - [ ] Przylutowanie pinów modułu mikrofonu.
 - [ ] Złożenie układu na płytce stykowej.
