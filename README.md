@@ -50,9 +50,14 @@ Aby ułatwić sobie pracę, przygotowałem listę czynności, które należy wyk
 Odnośniki na obrazkach prowadzą do ich źródła.
 
 ## Bibliografia
-* [Fast Fourier Transforms](http://www.katjaas.nl/FFT/FFT.html) [dostęp: 2016-11-8]
-* [Cooley&ndash;Tukey FFT algorithm](https://en.wikipedia.org/wiki/Cooley–Tukey_FFT_algorithm) [dostęp: 2016-11-8]
-* R. Burden, J. Faires. Numerical Analysis. Edycja 9. Strony 547&ndash;557.
+* [Fast Fourier Transforms](http://www.katjaas.nl/FFT/FFT.html) [dostęp: 2016-11-8]  
+  obrazowe przedstawienie sposobu działania i implementacji algorytmu Colleya-Turkeya
+* [Cooley&ndash;Tukey FFT algorithm](https://en.wikipedia.org/wiki/Cooley–Tukey_FFT_algorithm) [dostęp: 2016-11-8]  
+  artykuł w Wikipedii
+* [Szeregi i transformaty Fouriera](http://www.icsr.agh.edu.pl/~mownit/output/pdf/fourier.pdf) [dostęp: 2016-11-8]  
+  notatki do wykładu z MOwNiT-u dra Bubaka
+* R. Burden, J. Faires. Numerical Analysis. Edycja 9. Strony 547&ndash;557.  
+  rozdział o szybkiej transformacie Fouriera
 
 ***
 
