@@ -36,7 +36,7 @@ Aby ułatwić sobie pracę, przygotowałem listę czynności, które należy wyk
 - [x] Zakup potrzebnych elementów.
 - [x] Implementacja rekurencyjnego algorytmu FFT w języku Python
 - [x] Implementacja algorytmu Cooleya-Tukeya w języku C
-- [ ] Test współpracy klonu Arduino z Arduino IDE.
+- [x] Test współpracy klonu Arduino z Arduino IDE.
 - [ ] Przylutowanie pinów modułu mikrofonu.
 - [ ] Złożenie układu na płytce stykowej.
 - [ ] Podstawowa obsługa przycisku.
@@ -45,6 +45,8 @@ Aby ułatwić sobie pracę, przygotowałem listę czynności, które należy wyk
 - [ ] Obsługa rozpoczęcia i zakończenia nagrywania.
 - [ ] Wykonywanie transformat Fouriera.
 - [ ] Generowanie adekwatnego sygnału wyjściowego.
+
+## Realizacja
 
 ## Źródła
 Odnośniki na obrazkach prowadzą do ich źródła.
