@@ -17,6 +17,14 @@ W projekcie wykorzystuję:
 Zdecydowałem się wykorzystać platformę Arduino Micro między innymi dlatego, że pozwala na zasilanie urządzeń peryferyjnych napięciem 3,3&nbsp;V. Mikrofon zasilany takim napięciem charakteryzuje się większą czułością, niż w przypadku zastosowania napięcia 5&nbsp;V.
 
 
+## Złożenie układu na płytce stykowej
+Złożyłem układ tak, jak przedstawione jest to na poniższym diagramie. Kluczowym było podłączenie styku GND mikrofonu do osobnego pinu mikrokontrolera - w przeciwnym wypadku mikrofon odczytywał sygnał przesunięty o pewną stałą wartość.
+
+![diagram płytki sytkowej][breadboard-diagram]
+
+![zdjęcie płytki stykowej][breadboard-photo]
+
+
 ## Funkcjonalność
 Urządzenie pracuje według następującego schematu.
 
@@ -37,8 +45,8 @@ Aby ułatwić sobie pracę, przygotowałem listę czynności, które należy wyk
 - [x] Implementacja rekurencyjnego algorytmu FFT w języku Python
 - [x] Implementacja algorytmu Cooleya-Tukeya w języku C
 - [x] Test współpracy klonu Arduino z Arduino IDE.
-- [ ] Przylutowanie pinów modułu mikrofonu.
-- [ ] Złożenie układu na płytce stykowej.
+- [x] Przylutowanie pinów modułu mikrofonu.
+- [x] Złożenie układu na płytce stykowej.
 - [ ] Podstawowa obsługa przycisku.
 - [ ] Podstawowa obsługa brzęczyka.
 - [ ] Podstawowa obsługa mikrofonu.
@@ -76,3 +84,6 @@ Paweł Szopiński
 [breadboard-img]: img/breadboard.png
 [button-img]: img/button.png
 [wires-img]: img/wires.png
+
+[breadboard-diagram]: img/breadboard-diagram.png
+[breadboard-photo]: img/breadboard-photo.png
