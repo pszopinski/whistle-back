@@ -65,6 +65,10 @@ Tak skonfigurowany układ jest w stanie poprawnie odczytywać sygnał z mikrofon
 ![wykress wartości zwracanych przez układ][stream-mic-chart]
 
 
+## Ograniczenia Arduino
+Arduino Micro posiada 2,5&nbsp;kB pamięci RAM. Jedna liczba zespolona zajmuje 8&nbsp;B. Maksymalnie przechowywać w pamięci możemy więc około 300 próbek. Dodając ograniczenie implementacji algorytmu FFT na tablice próbek długości 2<sup>N</sup>, zostajemy przy 256 próbkach. Przy częstotliwości próbkowania 8000&nbsp;Hz jesteśmy więc w stanie przechowyać w pamięci tylko 32&nbsp;ms przy założeniu, że algorytm FFT wykonuje wszystkie operacje w miejscu. Moja implementacja algorytmu FFT potrzebuje ilość pamięci równą dwukrotności rozmiaru tablicy próbek. To nakłada ograniczenie ilości próbek do 128.
+
+
 ## Źródła
 Odnośniki na obrazkach prowadzą do ich źródła.
 
