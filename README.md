@@ -70,7 +70,7 @@ Arduino Micro posiada 2,5&nbsp;kB pamięci RAM. Jedna liczba zespolona zajmuje 8
 
 
 ## Źródła
-Odnośniki na obrazkach prowadzą do ich źródła.
+Odnośniki na obrazkach prowadzą do ich źródła. Diagram układu przygotowałem w programie [Fritzing](http://fritzing.org/home/).
 
 ## Bibliografia
 * [Fast Fourier Transforms](http://www.katjaas.nl/FFT/FFT.html) [dostęp: 2016-11-8]  
