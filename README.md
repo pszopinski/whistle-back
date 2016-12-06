@@ -17,14 +17,6 @@ W projekcie wykorzystuję:
 Zdecydowałem się wykorzystać platformę Arduino Micro między innymi dlatego, że pozwala na zasilanie urządzeń peryferyjnych napięciem 3,3&nbsp;V. Mikrofon zasilany takim napięciem charakteryzuje się większą czułością, niż w przypadku zastosowania napięcia 5&nbsp;V.
 
 
-## Złożenie układu na płytce stykowej
-Złożyłem układ tak, jak przedstawione jest to na poniższym diagramie. Kluczowym było podłączenie styku GND mikrofonu do osobnego pinu mikrokontrolera - w przeciwnym wypadku mikrofon odczytywał sygnał przesunięty o pewną stałą wartość.
-
-![diagram płytki sytkowej][breadboard-diagram]
-
-![zdjęcie płytki stykowej][breadboard-photo]
-
-
 ## Funkcjonalność
 Urządzenie pracuje według następującego schematu.
 
@@ -54,7 +46,14 @@ Aby ułatwić sobie pracę, przygotowałem listę czynności, które należy wyk
 - [ ] Wykonywanie transformat Fouriera.
 - [ ] Generowanie adekwatnego sygnału wyjściowego.
 
-## Realizacja
+
+## Złożenie układu na płytce stykowej
+Złożyłem układ tak, jak przedstawione jest to na poniższym diagramie. Kluczowym było podłączenie styku GND mikrofonu do osobnego pinu mikrokontrolera - w przeciwnym wypadku mikrofon odczytywał sygnał przesunięty o pewną stałą wartość.
+
+![diagram płytki sytkowej][breadboard-diagram]
+
+![zdjęcie płytki stykowej][breadboard-photo]
+
 
 ## Źródła
 Odnośniki na obrazkach prowadzą do ich źródła.
