@@ -67,7 +67,7 @@ Odnośniki na obrazkach prowadzą do ich źródła.
   notatki do wykładu z MOwNiT-u dra Bubaka
 * R. Burden, J. Faires. Numerical Analysis. Edycja 9. Strony 547&ndash;557.  
   rozdział o szybkiej transformacie Fouriera
-* [Arduino - Reference](https://www.arduino.cc/en/Reference/HomePage) [dostęp: 2016-12-06]
+* [Arduino - Reference](https://www.arduino.cc/en/Reference/HomePage) [dostęp: 2016-12-06]  
   dokumentacja języka programowania Arduino
 
 ***
