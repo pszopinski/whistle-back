@@ -39,9 +39,9 @@ Aby ułatwić sobie pracę, przygotowałem listę czynności, które należy wyk
 - [x] Test współpracy klonu Arduino z Arduino IDE.
 - [x] Przylutowanie pinów modułu mikrofonu.
 - [x] Złożenie układu na płytce stykowej.
-- [ ] Podstawowa obsługa przycisku.
-- [ ] Podstawowa obsługa brzęczyka.
-- [ ] Podstawowa obsługa mikrofonu.
+- [x] Podstawowa obsługa przycisku.
+- [x] Podstawowa obsługa brzęczyka.
+- [x] Podstawowa obsługa mikrofonu.
 - [ ] Obsługa rozpoczęcia i zakończenia nagrywania.
 - [ ] Wykonywanie transformat Fouriera.
 - [ ] Generowanie adekwatnego sygnału wyjściowego.
@@ -53,6 +53,16 @@ Złożyłem układ tak, jak przedstawione jest to na poniższym diagramie. Klucz
 ![diagram płytki sytkowej][breadboard-diagram]
 
 ![zdjęcie płytki stykowej][breadboard-photo]
+
+Mikrofon zasilany jest napięciem 3,3&nbsp;V. Pin 3V3 połączony jest również z pinem REF dlatego, że czytamy wartości analogowe z mikrofonu właśnie o takim napięciu (pin A5). Pin przycisku (D5) został skonfigurowany jako INPUT_PULLUP.
+
+
+## Odczytywanie danych z mikrofonu
+Tak skonfigurowany układ jest w stanie poprawnie odczytywać sygnał z mikrofonu, co widać na poniższych zrzutach ekranu.
+
+![zrzut ekranu projektu stream_mic][stream-mic-code]
+
+![wykress wartości zwracanych przez układ][stream-mic-chart]
 
 
 ## Źródła
@@ -88,3 +98,6 @@ Paweł Szopiński
 
 [breadboard-diagram]: img/breadboard-diagram.png
 [breadboard-photo]: img/breadboard-photo.png
+
+[stream-mic-code]: img/stream-mic-code.png
+[stream-mic-chart]: img/stream-mic-chart.png
