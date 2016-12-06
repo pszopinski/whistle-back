@@ -85,5 +85,5 @@ Paweł Szopiński
 [button-img]: img/button.png
 [wires-img]: img/wires.png
 
-[breadboard-diagram]: img/breadboard-diagram.svg
+[breadboard-diagram]: img/breadboard-diagram.png
 [breadboard-photo]: img/breadboard-photo.png
