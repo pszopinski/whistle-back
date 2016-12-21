@@ -43,7 +43,7 @@ Aby ułatwić sobie pracę, przygotowałem listę czynności, które należy wyk
 - [x] Podstawowa obsługa brzęczyka.
 - [x] Podstawowa obsługa mikrofonu.
 - [ ] Obsługa rozpoczęcia i zakończenia nagrywania.
-- [ ] Wykonywanie transformat Fouriera.
+- [x] Wykonywanie transformat Fouriera.
 - [ ] Generowanie adekwatnego sygnału wyjściowego.
 
 
@@ -62,11 +62,17 @@ Tak skonfigurowany układ jest w stanie poprawnie odczytywać sygnał z mikrofon
 
 ![zrzut ekranu projektu stream_mic][stream-mic-code]
 
-![wykress wartości zwracanych przez układ][stream-mic-chart]
+![wykres wartości zwracanych przez układ][stream-mic-chart]
 
 
 ## Ograniczenia Arduino
 Arduino Micro posiada 2,5&nbsp;kB pamięci RAM. Jedna liczba zespolona zajmuje 8&nbsp;B. Maksymalnie przechowywać w pamięci możemy więc około 300 próbek. Dodając ograniczenie implementacji algorytmu FFT na tablice próbek długości 2<sup>N</sup>, zostajemy przy 256 próbkach. Moja implementacja algorytmu FFT potrzebuje ilość pamięci równą dwukrotności rozmiaru tablicy próbek. To nakłada ograniczenie ilości próbek do 128.
+
+
+## Odczytywanie częstotliwości
+Projekty Arudino *fft* i *fft_continuous* zawierają w pełni działającą implementację algorytmu FFT.
+
+![wykres dominującej częstotliwości wykrywanej przez układ][fft-continuous-chart]
 
 
 ## Źródła
@@ -105,3 +111,4 @@ Paweł Szopiński
 
 [stream-mic-code]: img/stream-mic-code.png
 [stream-mic-chart]: img/stream-mic-chart.png
+[fft-continuous-chart]: img/fft-continuous-chart.png
