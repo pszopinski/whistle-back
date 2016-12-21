@@ -1,14 +1,13 @@
 #include "complex.h"
 #include "fft.h"
 /*
- * Paweł Szopiński
- * 2016
- * 
- * When a button is pressed, record FFT_CHUNK_SIZE samples and
- * then print their Fourier transform.
- * 
- * Connect wires as in no_buzzer.svg.
- */
+   Paweł Szopiński
+   2016
+
+   Perform a Fast Fourier Transfrom on a button press.
+
+   Connect the wires as in diagram.png.
+*/
 
 // Pull-up pin for the button
 const int BUTTON = 5;
@@ -32,36 +31,28 @@ void loop() {
 
   // Record on a button press
   if (buttonState == LOW) {
-    
     // Record
     digitalWrite(LED_BUILTIN, HIGH);
-    for (int i=0; i<FFT_CHUNK_SIZE; i++) {
+    for (int i = 0; i < FFT_CHUNK_SIZE; i++) {
       SAMPLES[i] = Complex(analogRead(MIC));
-      Serial.println(SAMPLES[i].modulus(), 0);    }
+    }
     digitalWrite(LED_BUILTIN, LOW);
 
     // Do a FFT
     fft(SAMPLES);
 
-    // Find the dominant frequency
-    double max_modulus = 0;
-    int bin_number = 0;
-    for (int i=1; i<FFT_CHUNK_SIZE/2; i++) {
-      double modulus = SAMPLES[i].modulus();
-      Serial.print(i, DEC);
-      Serial.print(": ");
-      Serial.println(modulus, 2);
-      if (modulus > max_modulus) {
-        max_modulus = modulus;
-        bin_number = i;
-      }
+    // Print the results
+    for (int i = 1; i < FFT_CHUNK_SIZE / 2; i++) {
+      Serial.println(SAMPLES[i].modulus());
     }
     Serial.println();
-    Serial.println(bin_number, DEC);
-    Serial.println(bin_number * double(FFT_SAMPLE_RATE) / double(FFT_CHUNK_SIZE), 2);
+
+    // Print the dominan frequency
+    Serial.print(F("Dominant frequency: "));
+    Serial.println(dominant_frequency(SAMPLES));
     Serial.println();
 
-    delay(500);
-    
+    // Wait for one second
+    delay(1000);
   }
 }
