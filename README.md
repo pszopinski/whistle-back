@@ -53,6 +53,8 @@ Wykorzystałem najbardziej powszechną formę algorytmu Cooleya–Turkeya, Radix
 
 Aby algorytm pracował *in situ*, zamienianie kolejności wyliczonych wartości w każdym etapie transformaty nie jest wykonywane. W wyniku tego otrzymuje się tablicę z indeksami w kolejności **odwróconych bitów**. Nie przeszkadza to jednak w znalezieniu maksymalnej wartości (i obliczeniu dominującej częstotliwości), a zmniejsza czas obliczeń i wymagania pamięciowe.
 
+![diagram wykonywania FFT][bit-reversal]
+
 
 
 ## Złożenie układu na płytce stykowej
@@ -84,7 +86,12 @@ Projekty Arudino *fft* i *fft_continuous* zawierają w pełni działającą impl
 
 
 ## Źródła
-Odnośniki na obrazkach prowadzą do ich źródła. Diagram układu przygotowałem w programie [Fritzing](http://fritzing.org/home/).
+Odnośniki na obrazkach prowadzą do ich źródła.
+
+[Diagram](https://commons.wikimedia.org/wiki/File:DIT-FFT-butterfly.png) przedstawiający wykonywanie FFT został stworzony przez użytkownika Virens.
+
+Diagram układu przygotowałem w programie [Fritzing](http://fritzing.org/home/).
+
 
 ## Bibliografia
 * [Fast Fourier Transforms](http://www.katjaas.nl/FFT/FFT.html) [dostęp: 2016-11-8]  
@@ -113,6 +120,8 @@ Paweł Szopiński
 [breadboard-img]: img/breadboard.png
 [button-img]: img/button.png
 [wires-img]: img/wires.png
+
+[bit-reversal]: img/bit-reversal.png
 
 [breadboard-diagram]: img/breadboard-diagram.png
 [breadboard-photo]: img/breadboard-photo.png
