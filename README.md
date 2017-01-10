@@ -31,6 +31,7 @@ Urządzenie pracuje według następującego schematu.
 5. Odtworzenie sygnału wyjściowego.
 6. Powrót do punktu 1.
 
+
 ## Lista zadań
 Aby ułatwić sobie pracę, przygotowałem listę czynności, które należy wykonać.
 - [x] Zakup potrzebnych elementów.
@@ -45,6 +46,13 @@ Aby ułatwić sobie pracę, przygotowałem listę czynności, które należy wyk
 - [ ] Obsługa rozpoczęcia i zakończenia nagrywania.
 - [x] Wykonywanie transformat Fouriera.
 - [ ] Generowanie adekwatnego sygnału wyjściowego.
+
+
+## Opis użytego algorytmu
+Wykorzystałem najbardziej powszechną formę algorytmu Cooleya–Turkeya, Radix-2. Polega ona na obliczeniu transformat indeksów parzystych i nieparzystych osobno, a następnie połączeniu danych. Przyspieszanie obliczeń osiąga się przy wykorzystaniu okresowości transformaty Fouriera.
+
+Aby algorytm pracował *in situ*, zamienianie kolejności wyliczonych wartości w każdym etapie transformaty nie jest wykonywane. W wyniku tego otrzymuje się tablicę z indeksami w kolejności **odwróconych bitów**. Nie przeszkadza to jednak w znalezieniu maksymalnej wartości (i obliczeniu dominującej częstotliwości), a zmniejsza czas obliczeń i wymagania pamięciowe.
+
 
 
 ## Złożenie układu na płytce stykowej
@@ -66,7 +74,7 @@ Tak skonfigurowany układ jest w stanie poprawnie odczytywać sygnał z mikrofon
 
 
 ## Ograniczenia Arduino
-Arduino Micro posiada 2,5&nbsp;kB pamięci RAM. Jedna liczba zespolona zajmuje 8&nbsp;B. Maksymalnie przechowywać w pamięci możemy więc około 300 próbek. Dodając ograniczenie implementacji algorytmu FFT na tablice próbek długości 2<sup>N</sup>, zostajemy przy 256 próbkach. Moja implementacja algorytmu FFT potrzebuje ilość pamięci równą dwukrotności rozmiaru tablicy próbek. To nakłada ograniczenie ilości próbek do 128.
+Arduino Micro posiada 2,5&nbsp;kB pamięci RAM. Jedna liczba zespolona zajmuje 8&nbsp;B. Maksymalnie przechowywać w pamięci możemy więc około 300 próbek. Dodając ograniczenie implementacji algorytmu FFT na tablice próbek długości 2<sup>N</sup>, maksymalnie możemy przetrzymywać 256 próbek.
 
 
 ## Odczytywanie częstotliwości
