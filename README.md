@@ -85,6 +85,12 @@ Projekty Arudino *fft* i *fft_continuous* zawierają w pełni działającą impl
 ![wykres dominującej częstotliwości wykrywanej przez układ][fft-continuous-chart]
 
 
+
+## Napotkane trudności
+Podczas rozwoju projektu musiałem rozwiązać wiele problemów. Były to między innymi nieprawidłowe wyniki obliczeń wynikające z przekroczenia zakresu i amplifikacji błędów reprezentacji zmiennoprzecinkowej. Musiałem również nauczyć się poprawnie korzystać z pamięci programu AVR przy pomocy słowa kluczowego **PROGMEM** dostępnego w Arduino.
+
+
+
 ## Źródła
 Odnośniki na obrazkach prowadzą do ich źródła.
 
