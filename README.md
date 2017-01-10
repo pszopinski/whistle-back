@@ -3,6 +3,7 @@ Urządzenie nasłuchujące melodię z otoczenia i odwzorowujące ją za pomocą
 brzęczyka.
 
 
+
 ## Potrzebne elementy
 W projekcie wykorzystuję:
 * [klon Arduino Micro][arduino-ali] wyposażony w mikrokontroler [ATmega32U4][atmega] i 2,5&nbsp;kB pamięci SRAM,
@@ -17,19 +18,18 @@ W projekcie wykorzystuję:
 Zdecydowałem się wykorzystać platformę Arduino Micro między innymi dlatego, że pozwala na zasilanie urządzeń peryferyjnych napięciem 3,3&nbsp;V. Mikrofon zasilany takim napięciem charakteryzuje się większą czułością, niż w przypadku zastosowania napięcia 5&nbsp;V.
 
 
+
 ## Funkcjonalność
 Urządzenie pracuje według następującego schematu.
 
 1. Oczekiwanie na naciśnięcie przycisku.
 2. Nagrywanie melodii z otoczenia.
-3. Zakończenie nagrywania
-  - po dwóch sekundach ciszy, lub
-  - po 10 sekundach nagrywania.
-4. Dla każdej z próbek czasowych:
+3. Dla każdej z próbek czasowych:
   1. Przeprowadzenie transformaty Fouriera.
   2. Zapisanie odpowiedniego sygnału wyjściowego.
-5. Odtworzenie sygnału wyjściowego.
-6. Powrót do punktu 1.
+4. Odtworzenie sygnału wyjściowego.
+5. Powrót do punktu 1.
+
 
 
 ## Lista zadań
@@ -43,28 +43,30 @@ Aby ułatwić sobie pracę, przygotowałem listę czynności, które należy wyk
 - [x] Podstawowa obsługa przycisku.
 - [x] Podstawowa obsługa brzęczyka.
 - [x] Podstawowa obsługa mikrofonu.
-- [ ] Obsługa rozpoczęcia i zakończenia nagrywania.
+- [x] Obsługa rozpoczęcia i zakończenia nagrywania.
 - [x] Wykonywanie transformat Fouriera.
-- [ ] Generowanie adekwatnego sygnału wyjściowego.
+- [x] Generowanie adekwatnego sygnału wyjściowego.
+
 
 
 ## Opis użytego algorytmu
 Wykorzystałem najbardziej powszechną formę algorytmu Cooleya–Turkeya, Radix-2. Polega ona na obliczeniu transformat indeksów parzystych i nieparzystych osobno, a następnie połączeniu danych. Przyspieszanie obliczeń osiąga się przy wykorzystaniu okresowości transformaty Fouriera.
 
-Aby algorytm pracował *in situ*, zamienianie kolejności wyliczonych wartości w każdym etapie transformaty nie jest wykonywane. W wyniku tego otrzymuje się tablicę z indeksami w kolejności **odwróconych bitów**. Nie przeszkadza to jednak w znalezieniu maksymalnej wartości (i obliczeniu dominującej częstotliwości), a zmniejsza czas obliczeń i wymagania pamięciowe.
+W trakcie działania algorytmu zamienianie kolejności wyliczonych wartości nie jest wykonywane po każdym etapie transformaty. W wyniku tego otrzymuje się tablicę z indeksami w kolejności **odwróconych bitów**. W mojej implementacji dokonuję zmiany kolejności indeksów na końcu.
 
 ![diagram wykonywania FFT][bit-reversal]
 
 
 
 ## Złożenie układu na płytce stykowej
-Złożyłem układ tak, jak przedstawione jest to na poniższym diagramie. Kluczowym było podłączenie styku GND mikrofonu do osobnego pinu mikrokontrolera - w przeciwnym wypadku mikrofon odczytywał sygnał przesunięty o pewną stałą wartość.
+Złożyłem układ tak, jak przedstawione jest to na poniższym diagramie.
 
 ![diagram płytki sytkowej][breadboard-diagram]
 
 ![zdjęcie płytki stykowej][breadboard-photo]
 
-Mikrofon zasilany jest napięciem 3,3&nbsp;V. Pin 3V3 połączony jest również z pinem REF dlatego, że czytamy wartości analogowe z mikrofonu właśnie o takim napięciu (pin A5). Pin przycisku (D5) został skonfigurowany jako INPUT_PULLUP.
+Mikrofon zasilany jest napięciem 3,3&nbsp;V. Pin 3V3 połączony jest również z pinem REF dlatego, że czytamy wartości analogowe z mikrofonu właśnie o takim napięciu. Pin przycisku (D5) został skonfigurowany jako INPUT_PULLUP.
+
 
 
 ## Odczytywanie danych z mikrofonu
@@ -75,20 +77,25 @@ Tak skonfigurowany układ jest w stanie poprawnie odczytywać sygnał z mikrofon
 ![wykres wartości zwracanych przez układ][stream-mic-chart]
 
 
+
 ## Ograniczenia Arduino
-Arduino Micro posiada 2,5&nbsp;kB pamięci RAM. Jedna liczba zespolona zajmuje 8&nbsp;B. Maksymalnie przechowywać w pamięci możemy więc około 300 próbek. Dodając ograniczenie implementacji algorytmu FFT na tablice próbek długości 2<sup>N</sup>, maksymalnie możemy przetrzymywać 256 próbek.
+Arduino Micro posiada 2,5&nbsp;kB pamięci RAM, a jedna liczba zespolona zajmuje 8&nbsp;B. Maksymalnie przechowywać w pamięci możemy więc około 300 próbek. Dodając ograniczenie implementacji algorytmu FFT na tablice próbek długości 2<sup>N</sup> i potrzebę stworzenia drugiej tablicy tej samej długości, maksymalnie możemy przechowywać w pamięci 128 próbek.
 
 
-## Odczytywanie częstotliwości
-Projekty Arudino *fft* i *fft_continuous* zawierają w pełni działającą implementację algorytmu FFT.
 
-![wykres dominującej częstotliwości wykrywanej przez układ][fft-continuous-chart]
+## Projekty Arduino
+W projekcie *fft_buzzer* zaimplementowałem pełną funkcjonalność.
+
+Projekty Arudino *fft* i *fft_continuous* zawierają implementację algorytmu FFT. Projekt *stream_mic* zawiera obsługę mikrofonu.
 
 
 
 ## Napotkane trudności
 Podczas rozwoju projektu musiałem rozwiązać wiele problemów. Były to między innymi nieprawidłowe wyniki obliczeń wynikające z przekroczenia zakresu i amplifikacji błędów reprezentacji zmiennoprzecinkowej. Musiałem również nauczyć się poprawnie korzystać z pamięci programu AVR przy pomocy słowa kluczowego **PROGMEM** dostępnego w Arduino.
 
+Kluczowym było podłączenie styku GND mikrofonu do osobnego pinu mikrokontrolera - w przeciwnym wypadku mikrofon odczytywał sygnał przesunięty o pewną stałą wartość.
+
+Precyzyjne odczytanie częstotliwości sprawia problemy.
 
 
 ## Źródła
@@ -97,6 +104,7 @@ Odnośniki na obrazkach prowadzą do ich źródła.
 [Diagram](https://commons.wikimedia.org/wiki/File:DIT-FFT-butterfly.png) przedstawiający wykonywanie FFT został stworzony przez użytkownika Virens.
 
 Diagram układu przygotowałem w programie [Fritzing](http://fritzing.org/home/).
+
 
 
 ## Bibliografia
@@ -134,4 +142,3 @@ Paweł Szopiński
 
 [stream-mic-code]: img/stream-mic-code.png
 [stream-mic-chart]: img/stream-mic-chart.png
-[fft-continuous-chart]: img/fft-continuous-chart.png
