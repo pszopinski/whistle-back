@@ -35,8 +35,8 @@ Urządzenie pracuje według następującego schematu.
 ## Lista zadań
 Aby ułatwić sobie pracę, przygotowałem listę czynności, które należy wykonać.
 - [x] Zakup potrzebnych elementów.
-- [x] Implementacja rekurencyjnego algorytmu FFT w języku Python
-- [x] Implementacja algorytmu Cooleya-Tukeya w języku C
+- [x] Implementacja rekurencyjnego algorytmu FFT w języku Python.
+- [x] Implementacja algorytmu Cooleya-Tukeya w języku C.
 - [x] Test współpracy klonu Arduino z Arduino IDE.
 - [x] Przylutowanie pinów modułu mikrofonu.
 - [x] Złożenie układu na płytce stykowej.
@@ -61,7 +61,7 @@ W trakcie działania algorytmu zamienianie kolejności wyliczonych wartości nie
 ## Złożenie układu na płytce stykowej
 Złożyłem układ tak, jak przedstawione jest to na poniższym diagramie.
 
-![diagram płytki sytkowej][breadboard-diagram]
+![diagram płytki stykowej][breadboard-diagram]
 
 ![zdjęcie płytki stykowej][breadboard-photo]
 
@@ -91,11 +91,11 @@ Projekty Arudino *fft* i *fft_continuous* zawierają implementację algorytmu FF
 
 
 ## Napotkane trudności
-Podczas rozwoju projektu musiałem rozwiązać wiele problemów. Były to między innymi nieprawidłowe wyniki obliczeń wynikające z przekroczenia zakresu i amplifikacji błędów reprezentacji zmiennoprzecinkowej. Musiałem również nauczyć się poprawnie korzystać z pamięci programu AVR przy pomocy słowa kluczowego **PROGMEM** dostępnego w Arduino.
+Podczas rozwoju projektu musiałem rozwiązać wiele problemów. Były to między innymi nieprawidłowe wyniki obliczeń wynikające z przekroczenia zakresu i propagacji błędów reprezentacji zmiennoprzecinkowej. Musiałem również nauczyć się poprawnie korzystać z danych przechowywanych w pamięci programu za pomocą słowa kluczowego **PROGMEM**.
 
-Kluczowym było podłączenie styku GND mikrofonu do osobnego pinu mikrokontrolera - w przeciwnym wypadku mikrofon odczytywał sygnał przesunięty o pewną stałą wartość.
+Kluczowym okazało podłączenie styku GND mikrofonu do osobnego pinu mikrokontrolera. W w przeciwnym wypadku mikrofon odczytywał sygnał przesunięty o pewną stałą wartość.
 
-Precyzyjne odczytanie częstotliwości sprawia problemy.
+Precyzyjne odczytanie (i odtworzenie) częstotliwości sprawia problemy.
 
 
 ## Źródła
