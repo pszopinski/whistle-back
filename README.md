@@ -86,7 +86,7 @@ Arduino Micro posiada 2,5&nbsp;kB pamięci RAM, a jedna liczba zespolona zajmuje
 ## Projekty Arduino
 W projekcie *fft_buzzer* zaimplementowałem pełną funkcjonalność.
 
-Projekty Arudino *fft* i *fft_continuous* zawierają implementację algorytmu FFT. Projekt *stream_mic* zawiera obsługę mikrofonu.
+Projekty *fft* i *fft_continuous* zawierają implementację algorytmu FFT. Projekt *stream_mic* zawiera obsługę mikrofonu.
 
 
 
